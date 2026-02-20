@@ -14,73 +14,75 @@
         }
         .header-engine {
             background-color: #000000;
-            padding: 30px 10px;
+            padding: 40px 10px;
             border-bottom: 2px solid #a68a4b;
         }
         h1 { 
             font-family: 'Cinzel', serif; color: #a68a4b !important; 
-            font-size: 2.5rem; letter-spacing: 4px; margin: 0;
+            font-size: 2.2rem; letter-spacing: 3px; margin: 0;
         }
-        .sub-título { color: #777; font-style: italic; font-size: 1.2rem; margin-top: 10px; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .video-container {
-            background: #000; border: 1px solid #a68a4b;
-            box-shadow: 0 0 30px rgba(166, 138, 75, 0.2);
-            margin: 40px 0;
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        /* Ajuste das Imagens para ficarem Premium */
+        img { 
+            width: 100%; 
+            max-width: 100%; 
+            height: auto; 
+            margin: 30px 0; 
+            border: 1px solid #1a1a1a;
+            display: block;
         }
-        video { width: 100%; display: block; }
+
+        .seccao-tecnica {
+            text-align: left; 
+            border-left: 4px solid #a68a4b;
+            padding: 15px 25px; 
+            margin: 50px 0 10px 0;
+            background: rgba(166, 138, 75, 0.03);
+        }
+        h3 { font-family: 'Cinzel', serif; color: #a68a4b; margin: 0; }
+        p { line-height: 1.8; color: #999; }
+
         .btn-compra {
             display: block; background-color: transparent; color: #a68a4b;
-            border: 2px solid #a68a4b; padding: 25px;
+            border: 2px solid #a68a4b; padding: 20px;
             font-family: 'Cinzel', serif; font-weight: bold;
-            text-decoration: none; margin: 50px 0; transition: 0.4s;
+            text-decoration: none; margin: 40px 0; transition: 0.4s;
         }
         .btn-compra:hover { background-color: #a68a4b; color: #000; }
-        .seccao-tecnica {
-            text-align: left; border-left: 4px solid #a68a4b;
-            padding: 20px 25px; margin: 60px 0;
-            background: rgba(166, 138, 75, 0.05);
-        }
-        h2, h3 { font-family: 'Cinzel', serif; color: #a68a4b; }
-        img { width: 100%; height: auto; margin: 20px 0; border: 1px solid #333; opacity: 0.9; }
-        footer { padding: 80px 20px; border-top: 1px solid #222; font-family: 'Cinzel', serif; color: #444; }
+        
+        footer { padding: 60px; color: #333; font-family: 'Cinzel', serif; font-size: 0.8rem; }
     </style>
 </head>
 <body>
     <div class="header-engine">
         <h1>FIGHTER ENGINE</h1>
-        <div class="sub-título">O Protocolo de Engenharia Física para o Lutador Master</div>
     </div>
 
     <div class="container">
-        <div class="video-container">
-            <video controls poster="capa-vsl.jpg">
-                <source src="vsl-fighter-engine.mp4" type="video/mp4">
-            </video>
-        </div>
+        <img src="mockup-manual.png" alt="Fighter Engine Manual">
 
         <a href="#" class="btn-compra">ATIVAR MOTOR DE LUTA</a>
 
         <div class="seccao-tecnica">
-            <h2>A ARQUITETURA DO SISTEMA</h2>
-            <p>Aos 40 anos, a biologia já não joga no seu time. Você precisa de um motor que suporte a pressão sem quebrar o chassis.</p>
+            <h3>01. BLINDAGEM ARTICULAR</h3>
+            <p>O chassis do sistema. Estabilidade absoluta para ombros e coluna.</p>
         </div>
-
-        <img src="mockup-manual.png" alt="Manual">
+        <img src="thumbnail-bloco1.png" alt="Blindagem">
 
         <div class="seccao-tecnica">
-            <h3>01. BLINDAGEM ARTICULAR</h3>
-            <p>O alicerce. Estabilidade para os ombros e coluna.</p>
-        </div>
-        <img src="thumbnail-bloco1.png"> <div class="seccao-tecnica">
             <h3>02. POTÊNCIA BALÍSTICA</h3>
-            <p>O motor V8. Explosão real com Kettlebell.</p>
+            <p>O motor V8. Explosão e torque para dominar o rola.</p>
         </div>
-        <img src="thumbnail-bloco2.jpg"> <div class="seccao-tecnica">
+        <img src="thumbnail-bloco2.jpg" alt="Potência">
+
+        <div class="seccao-tecnica">
             <h3>03. ESTABILIDADE DINÂMICA</h3>
-            <p>A base pesada. Transmissão de força para o tatame.</p>
+            <p>A base pesada. Transmissão de força eficiente para o tatame.</p>
         </div>
-        <img src="thumbnail-bloco3.png"> <footer>A ORDEM PRECEDE A FORÇA.</footer>
+        <img src="thumbnail-bloco3.png" alt="Estabilidade">
+
+        <footer>A ORDEM PRECEDE A FORÇA.</footer>
     </div>
 </body>
 </html>
