@@ -38,23 +38,17 @@
         /* HEADER / HERO */
         header { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .motto { font-size: 1.1rem; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 2rem; color: var(--gold-light); }
-        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-shadow: 0 0 40px rgba(197, 160, 89, 0.4); }
-
-        /* CARDS SUSPENSOS - REFORÇO DE CONTRASTE */
-        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 60px; }
-        
-        .pillar-card { 
-            text-align: center; 
-            padding: 50px 35px; 
-            /* Borda Ouro com brilho externo */
-            border: 2px solid var(--gold-dark);
-            background: rgba(10, 10, 10, 0.95) !important;
-            /* Sombra projetada para baixo e para os lados */
-            box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.8), 0 10px 20px -5px rgba(197, 160, 89, 0.1);
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border-radius: 4px;
-            position: relative;
-        }
+       header h1 { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 900;
+    font-size: clamp(3rem, 12vw, 6.5rem); 
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -2px; 
+    color: var(--gold);
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 40px rgba(197, 160, 89, 0.2);
+    margin-bottom: 0.5rem;
+}
 
         .pillar-card:hover { 
             transform: translateY(-15px);
@@ -179,6 +173,7 @@
 
 </body>
 </html>
+
 
 
 
