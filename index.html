@@ -6,19 +6,22 @@
     <title>Fighter Engine | O Protocolo do Lutador Master</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --carbon: #080808;
-            --carbon-light: #121212;
+       :root {
+            --carbon: #0D0D0D;       /* Preto suave para as bordas */
+            --slate: #1A1A1A;        /* Cinza esmaecido para o centro */
             --gold: #C5A059;
             --gold-dark: #8E6F3E;
             --white: #E5E5E5;
-            --gray: #888;
+            --gray: #999;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        
         body { 
-            background-color: var(--carbon); 
+            /* Aqui acontece a mágica do gradiente esmaecido */
+            background: radial-gradient(circle at center, var(--slate) 0%, var(--carbon) 100%);
+            background-attachment: fixed; 
             color: var(--white); 
             font-family: 'Lora', serif; 
             line-height: 1.8;
@@ -28,12 +31,6 @@
         h1, h2, h3 { font-family: 'Cinzel', serif; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
         
-        /* Background Especial Estilo E-book */
-        .bg-gradient {
-            background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
-        }
-
-        /* Hero */
         header {
             height: 90vh;
             display: flex;
@@ -46,50 +43,36 @@
         .motto { font-size: 1.1rem; border-bottom: 1px solid var(--gold); padding-bottom: 8px; margin-bottom: 2rem; opacity: 0.8; }
         header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 1rem; text-shadow: 0 0 20px rgba(197, 160, 89, 0.3); }
 
-        /* VSL */
-        .vsl-section { padding: 80px 0; background: var(--carbon-light); }
+        .vsl-section, .preview-section { padding: 80px 0; background: rgba(20, 20, 20, 0.4); }
         .video-wrapper {
             max-width: 850px;
             margin: 0 auto;
             border: 1px solid var(--gold-dark);
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
         }
         .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* Pillars Section */
         .pillars { padding: 100px 0; }
         .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 60px; }
-        .pillar-card { text-align: center; padding: 30px; border: 1px solid #1a1a1a; transition: 0.4s; }
-        .pillar-card:hover { border-color: var(--gold-dark); background: #0c0c0c; }
-        .pillar-card h3 { font-size: 1.8rem; margin-bottom: 20px; }
-        .pillar-card p { color: var(--gray); font-size: 0.95rem; }
+        .pillar-card { text-align: center; padding: 30px; border: 1px solid rgba(197, 160, 89, 0.1); transition: 0.4s; }
+        .pillar-card:hover { border-color: var(--gold-dark); background: rgba(255,255,255,0.05); }
 
-        /* Preview do E-book (Novidade baseada nas suas imagens) */
-        .preview-section { padding: 100px 0; background: var(--carbon-light); }
         .preview-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
             gap: 15px; 
             margin-top: 40px;
         }
-        .preview-grid img { 
-            width: 100%; 
-            height: auto; 
-            border: 1px solid #333; 
-            filter: grayscale(30%);
-            transition: 0.5s;
-        }
-        .preview-grid img:hover { filter: grayscale(0%); transform: scale(1.05); z-index: 10; border-color: var(--gold); }
+        .preview-grid img { width: 100%; height: auto; border: 1px solid #333; filter: grayscale(20%); transition: 0.5s; }
+        .preview-grid img:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--gold); }
 
-        /* FAQ */
         .faq { padding: 100px 0; }
-        .faq-item { margin-bottom: 30px; border-bottom: 1px solid #1a1a1a; padding-bottom: 20px; }
+        .faq-item { margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 20px; }
         .faq-item h4 { font-family: 'Cinzel'; color: var(--gold); margin-bottom: 10px; font-size: 1.1rem; }
 
-        /* CTA Button */
         .cta-btn {
             display: inline-block;
             background: var(--gold);
@@ -105,12 +88,7 @@
         }
         .cta-btn:hover { background: transparent; color: var(--gold); }
 
-        footer { padding: 60px; text-align: center; border-top: 1px solid #1a1a1a; color: var(--gray); font-size: 0.8rem; }
-        
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .pillar-grid { gap: 20px; }
-        }
+        footer { padding: 60px; text-align: center; border-top: 1px solid #222; color: var(--gray); font-size: 0.8rem; }
     </style>
 </head>
 <body class="bg-gradient">
@@ -189,3 +167,4 @@
 
 </body>
 </html>
+
