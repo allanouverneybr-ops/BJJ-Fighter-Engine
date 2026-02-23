@@ -6,9 +6,9 @@
     <title>Fighter Engine | O Protocolo do Lutador Master</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-      :root {
-            --carbon: #080808;       /* Preto profundo */
-            --slate: #1c1c1c;        /* Cinza esmaecido (o brilho do centro) */
+     :root {
+            --carbon: #050505;       /* Preto quase absoluto para as bordas */
+            --slate: #252525;        /* Cinza mais claro para o "foco de luz" central */
             --gold: #C5A059;
             --gold-dark: #8E6F3E;
             --white: #E5E5E5;
@@ -16,21 +16,25 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { 
+            scroll-behavior: smooth;
+            /* O SEGREDO ESTÁ AQUI: Gradiente radial fixo */
+            background: radial-gradient(circle at center, var(--slate) 0%, var(--carbon) 70%) no-repeat center center fixed;
+            background-size: cover;
+        }
         
         body { 
-            /* O GRADIENTE REAL: Começa cinza no centro e morre preto nas bordas */
-            background: radial-gradient(circle, var(--slate) 0%, var(--carbon) 80%) no-repeat center center fixed;
-            background-size: cover;
+            background: transparent !important; 
             color: var(--white); 
             font-family: 'Lora', serif; 
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Forçamos todas as seções a serem transparentes para o fundo aparecer */
-        header, section, footer, .vsl-section, .preview-section { 
-            background: transparent !important; 
+        /* Forçamos transparência absoluta em todos os blocos */
+        header, section, footer, div, .container, .vsl-section, .preview-section { 
+            background-color: transparent !important; 
+            background: transparent !important;
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
@@ -47,14 +51,14 @@
         }
 
         .motto { font-size: 1.1rem; border-bottom: 1px solid var(--gold); padding-bottom: 8px; margin-bottom: 2rem; }
-        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-shadow: 0 0 30px rgba(0,0,0,0.8); }
+        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-shadow: 0 5px 15px rgba(0,0,0,0.9); }
 
         .vsl-section { padding: 60px 0; }
         .video-wrapper {
             max-width: 850px;
             margin: 0 auto;
             border: 1px solid var(--gold-dark);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             position: relative;
             padding-bottom: 56.25%;
             background: #000;
@@ -64,35 +68,38 @@
         .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 60px; }
         .pillar-card { 
             text-align: center; padding: 30px; 
-            border: 1px solid rgba(197, 160, 89, 0.2); 
-            background: rgba(255, 255, 255, 0.03); /* Leve brilho para destacar do fundo */
+            border: 1px solid rgba(197, 160, 89, 0.15); 
+            background: rgba(255, 255, 255, 0.02) !important; /* Brilho mínimo para separar do fundo */
+            backdrop-filter: blur(5px); /* Efeito de vidro fosco opcional */
         }
 
         .preview-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
             gap: 15px; 
+            margin-top: 40px;
         }
-        .preview-grid img { width: 100%; border: 1px solid #333; transition: 0.5s; }
+        .preview-grid img { width: 100%; border: 1px solid #222; transition: 0.5s; }
         .preview-grid img:hover { transform: scale(1.05); border-color: var(--gold); }
 
-        .faq-item { margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        .faq-item { margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
         .faq-item h4 { font-family: 'Cinzel'; color: var(--gold); margin-bottom: 10px; }
 
         .cta-btn {
             display: inline-block;
             background: var(--gold);
             color: #000;
-            padding: 22px 60px;
+            padding: 20px 50px;
             font-family: 'Cinzel', serif;
             font-weight: bold;
             text-decoration: none;
             border: 1px solid var(--gold);
             transition: 0.3s;
+            cursor: pointer;
         }
         .cta-btn:hover { background: transparent; color: var(--gold); }
 
-        footer { padding: 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); color: var(--gray); font-size: 0.8rem; }
+        footer { padding: 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: var(--gray); font-size: 0.8rem; }
     </style>
 </head>
 <body class="bg-gradient">
@@ -171,5 +178,6 @@
 
 </body>
 </html>
+
 
 
