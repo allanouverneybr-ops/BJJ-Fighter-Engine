@@ -6,21 +6,21 @@
     <title>Fighter Engine | O Protocolo do Lutador Master</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-    :root {
-            --carbon: #050505;       /* Preto profundo */
-            --slate-smoke: #2a2a2a;  /* Cinza fumaça */
+:root {
+            --carbon-deep: #030303;    /* Preto absoluto para as bordas */
+            --midnight: #0a0c10;       /* Azul petróleo profundíssimo para o centro */
             --gold: #C5A059;
+            --gold-light: #E5C78F;     /* Um ouro mais claro para brilho */
             --gold-dark: #8E6F3E;
             --white: #E5E5E5;
-            --gray: #888;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { 
             height: 100%;
-            /* EFEITO FUMAÇA: Gradiente radial mais espalhado */
-            background: radial-gradient(circle at center, var(--slate-smoke) 0%, var(--carbon) 85%) no-repeat center center fixed;
+            /* NOVO FUNDO: Gradiente com 'vignette' pesado para dar foco central */
+            background: radial-gradient(circle at center, var(--midnight) 0%, var(--carbon-deep) 100%) no-repeat center center fixed;
             background-size: cover;
         }
         
@@ -32,80 +32,75 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        header, section, footer { background: transparent !important; }
-
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
-        
         h1, h2, h3 { font-family: 'Cinzel', serif; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; }
 
-        /* Estilo das Caixas (Cards) Suspensos */
+        /* HEADER / HERO */
+        header { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .motto { font-size: 1.1rem; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 2rem; color: var(--gold-light); }
+        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-shadow: 0 0 40px rgba(197, 160, 89, 0.4); }
+
+        /* CARDS SUSPENSOS - REFORÇO DE CONTRASTE */
         .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 60px; }
         
         .pillar-card { 
             text-align: center; 
-            padding: 40px 30px; 
-            /* Borda mais espessa */
-            border: 2px solid rgba(197, 160, 89, 0.3); 
-            /* Fundo levemente sólido para não sumir na fumaça */
-            background: rgba(15, 15, 15, 0.8) !important;
-            /* Efeito de Suspensão (Sombra) */
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
-            transition: all 0.4s ease;
-            border-radius: 2px;
+            padding: 50px 35px; 
+            /* Borda Ouro com brilho externo */
+            border: 2px solid var(--gold-dark);
+            background: rgba(10, 10, 10, 0.95) !important;
+            /* Sombra projetada para baixo e para os lados */
+            box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.8), 0 10px 20px -5px rgba(197, 160, 89, 0.1);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-radius: 4px;
+            position: relative;
         }
 
         .pillar-card:hover { 
-            transform: translateY(-10px); /* Sobe ao passar o mouse */
+            transform: translateY(-15px);
             border-color: var(--gold);
-            box-shadow: 0 35px 60px -15px rgba(197, 160, 89, 0.2);
+            /* Brilho ao redor do card no hover */
+            box-shadow: 0 50px 80px -20px rgba(0, 0, 0, 0.9), 0 0 20px rgba(197, 160, 89, 0.2);
         }
 
-        /* Hero e Títulos */
-        header { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .motto { font-size: 1.1rem; border-bottom: 1px solid var(--gold); padding-bottom: 8px; margin-bottom: 2rem; }
-        header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); text-shadow: 0 10px 20px rgba(0,0,0,1); }
+        .pillar-card h3 { font-size: 2rem; margin-bottom: 15px; }
+        .pillar-card p { font-size: 1rem; color: #bbb; }
 
-        /* VSL e Imagens */
-        .vsl-section { padding: 60px 0; }
+        /* VSL E PREVIEWS */
         .video-wrapper {
-            max-width: 850px;
-            margin: 0 auto;
             border: 2px solid var(--gold-dark);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.9);
-            position: relative;
-            padding-bottom: 56.25%;
+            box-shadow: 0 0 50px rgba(0,0,0,1);
             background: #000;
+            padding-bottom: 56.25%;
+            position: relative;
         }
         .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        .preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 40px; }
         .preview-grid img { 
-            width: 100%; 
-            border: 1px solid #333; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            transition: 0.5s; 
+            border: 2px solid #222;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+            transition: 0.4s; 
         }
-        .preview-grid img:hover { transform: scale(1.05); border-color: var(--gold); }
+        .preview-grid img:hover { border-color: var(--gold); transform: scale(1.03); }
 
-        /* FAQ e CTA */
-        .faq-item { margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
-        .faq-item h4 { font-family: 'Cinzel'; color: var(--gold); margin-bottom: 10px; }
-
+        /* BOTÃO CTA - DESTAQUE MÁXIMO */
         .cta-btn {
             display: inline-block;
-            background: var(--gold);
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
             color: #000;
-            padding: 22px 60px;
+            padding: 24px 70px;
             font-family: 'Cinzel', serif;
-            font-weight: bold;
+            font-weight: 700;
             text-decoration: none;
-            border: 2px solid var(--gold);
-            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(142, 111, 62, 0.4);
             transition: 0.3s;
         }
-        .cta-btn:hover { background: transparent; color: var(--gold); transform: translateY(-3px); }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(197, 160, 89, 0.6); }
 
-        footer { padding: 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); color: var(--gray); font-size: 0.8rem; }
+        footer { padding: 80px 0; border-top: 1px solid rgba(197, 160, 89, 0.1); opacity: 0.5; text-align: center; }
     </style>
 </head>
 <body class="bg-gradient">
@@ -184,6 +179,7 @@
 
 </body>
 </html>
+
 
 
 
