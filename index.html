@@ -70,12 +70,32 @@
         }
         .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        .preview-grid img { 
-            border: 2px solid #222;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-            transition: 0.4s; 
-        }
-        .preview-grid img:hover { border-color: var(--gold); transform: scale(1.03); }
+       /* --- CORREÇÃO DAS FOTOS DA VITRINE --- */
+
+.preview-grid { 
+    display: grid; 
+    /* Ajustei para as fotos ficarem em colunas melhores no desktop e mobile */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 20px; 
+    margin-top: 40px;
+}
+
+.preview-grid img { 
+    width: 100%; 
+    height: 300px; /* Isso garante que todas tenham a mesma altura */
+    object-fit: cover; /* Isso corta a imagem para caber na caixa sem deformar */
+    object-position: top; /* Foca no topo da página do e-book */
+    border: 2px solid #222;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    transition: 0.4s; 
+    border-radius: 4px;
+}
+
+.preview-grid img:hover { 
+    border-color: var(--gold); 
+    transform: scale(1.05); 
+    z-index: 10;
+}
 
         /* BOTÃO CTA - DESTAQUE MÁXIMO */
         .cta-btn {
@@ -173,6 +193,7 @@
 
 </body>
 </html>
+
 
 
 
