@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fighter Engine - Protocolo Kettlebell</title>
     <style>
-        :root {
-            --bg-petroleo: #0B242B; 
-            --card-bg: #0F2E37;
+       :root {
+            --bg-petroleo: #0B242B; /* Esta é a cor verde petróleo studio */
+            --card-bg: #0F2E37; 
             --accent-color: #D4AF37; 
-            --cta-color: #28a745; /* Verde de conversão */
+            --cta-color: #28a745; 
             --text-light: #F4F4F4;
             --border-glow: rgba(212, 175, 55, 0.2);
         }
@@ -18,11 +18,10 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-petroleo);
+            background-color: var(--bg-petroleo) !important; /* O !important garante que o verde petróleo prevaleça */
             color: var(--text-light);
             line-height: 1.6;
         }
-
         /* 1. Header Original Mantido */
         header {
             padding: 50px 20px;
@@ -200,3 +199,4 @@
 
 </body>
 </html>
+
