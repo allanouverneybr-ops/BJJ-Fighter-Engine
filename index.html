@@ -23,22 +23,60 @@
             line-height: 1.6;
         }
 
-        /* 1. Header Original Mantido */
+      /* Ajuste do Header para ficar igual à foto */
         header {
-            padding: 50px 20px;
+            padding: 60px 20px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background-color: var(--bg-petroleo);
+        }
+
+        .motto {
+            font-family: 'Times New Roman', serif; /* Estilo clássico da imagem */
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin: 10px auto 20px;
         }
 
         .header-title {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 900;
-            letter-spacing: -3px;
+            line-height: 0.9;
+            letter-spacing: -1px;
             text-transform: uppercase;
             margin: 0;
-            color: var(--text-light);
+            color: var(--accent-color); /* Cor dourada da imagem */
         }
 
+        .header-subtitle {
+            font-style: italic;
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        /* Botão com o gradiente da imagem */
+        .btn-header {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 60px;
+            background: linear-gradient(to bottom, #D4AF37 0%, #8A6D3B 100%);
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
         /* 2. VSL */
         .vsl-container {
             max-width: 850px;
@@ -200,3 +238,4 @@
 
 </body>
 </html>
+
