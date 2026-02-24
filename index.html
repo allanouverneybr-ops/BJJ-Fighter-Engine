@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fighter Engine - Protocolo Kettlebell</title>
     <style>
-        /* Variáveis de Estilo e Cores Premium */
         :root {
-            --bg-petroleo: #0B242B; /* Verde/Azul Petróleo Studio */
-            --card-bg: #0F2E37; /* Levemente mais claro para as caixas */
-            --accent-color: #D4AF37; /* Ouro envelhecido para detalhes/CTAs */
+            --bg-petroleo: #0B242B; 
+            --card-bg: #0F2E37;
+            --accent-color: #D4AF37; 
+            --cta-color: #28a745; /* Verde de conversão */
             --text-light: #F4F4F4;
             --border-glow: rgba(212, 175, 55, 0.2);
         }
@@ -17,31 +17,32 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-petroleo);
             color: var(--text-light);
             line-height: 1.6;
         }
 
-        /* 1. Header - Mantendo a Tipografia */
+        /* 1. Header Original Mantido */
         header {
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .header-title {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -2px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -3px;
             text-transform: uppercase;
             margin: 0;
             color: var(--text-light);
         }
 
-        /* 2. Seção VSL */
+        /* 2. VSL */
         .vsl-container {
-            max-width: 800px;
-            margin: 0 auto 40px;
+            max-width: 850px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
@@ -49,34 +50,57 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             background: #000;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 4. Espaço para o Mockup do E-book */
+        /* 3. CTA Principal */
+        .cta-wrapper {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+
+        .btn-cta {
+            background-color: var(--cta-color);
+            color: white;
+            padding: 20px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* 4. Mockup do E-book */
         .ebook-section {
-            background-color: rgba(0,0,0,0.2);
+            background-color: rgba(0,0,0,0.15);
             padding: 60px 20px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .ebook-mockup {
-            max-width: 400px;
+            max-width: 350px;
             width: 100%;
-            height: auto;
-            margin: 20px auto;
+            margin: 30px auto;
             display: block;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
         }
 
-        /* 3. As Três Caixas (Chassi, Motor, Tração) */
+        /* 5. Caixas Flutuantes (Pilares) */
         .features-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
-            padding: 40px 20px;
+            padding: 60px 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -84,29 +108,45 @@
         .feature-card {
             background: var(--card-bg);
             flex: 1 1 300px;
-            padding: 30px;
+            padding: 35px;
             border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-            /* Efeito de Flutuação */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
             text-align: center;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
         .feature-card h3 {
-            text-transform: uppercase;
             color: var(--accent-color);
+            text-transform: uppercase;
             margin-top: 0;
-            letter-spacing: 1px;
         }
 
-        /* Responsividade Mobile */
+        /* 6. Seção: Fique por dentro do Tratado */
+        .tratado-section {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .tratado-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* 7. Rodapé */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
         @media (max-width: 600px) {
-            .header-title { font-size: 2rem; }
+            .header-title { font-size: 2.2rem; }
             .feature-card { flex: 1 1 100%; }
         }
     </style>
@@ -114,7 +154,7 @@
 <body>
 
     <header>
-        <h1 class="header-title">FIGHTER ENGINE</h1>
+        <div class="header-title">FIGHTER ENGINE</div>
     </header>
 
     <main>
@@ -123,27 +163,40 @@
                 </div>
         </section>
 
+        <div class="cta-wrapper">
+            <a href="#" class="btn-cta">QUERO ATIVAR MEU FIGHTER ENGINE</a>
+        </div>
+
         <section class="ebook-section">
-            <h2>O Guia Prático do Veterano</h2>
-            <p>Tenha o protocolo detalhado na palma da sua mão.</p>
-            <img src="mockup-ebook.png" alt="Mockup do E-book Fighter Engine" class="ebook-mockup">
+            <h2>Material de Apoio Exclusivo</h2>
+            <img src="mockup-ebook.png" alt="Mockup Ebook" class="ebook-mockup">
         </section>
 
         <section class="features-grid">
             <div class="feature-card">
                 <h3>Chassi</h3>
-                <p>Fortalecimento das bases e integridade articular. Prepare sua estrutura para suportar a carga e o combate.</p>
+                <p>O alicerce. Blindagem articular e estabilidade postural para o veterano do tatame.</p>
             </div>
             <div class="feature-card">
                 <h3>Motor</h3>
-                <p>O coração do método. Potência explosiva com kettlebells para garantir gás infinito no tatame.</p>
+                <p>A força bruta. Protocolo de Kettlebell focado em explosão e economia de energia.</p>
             </div>
             <div class="feature-card">
                 <h3>Tração</h3>
-                <p>A transferência da força para o movimento. Melhore sua pegada e sua capacidade de imposição física.</p>
+                <p>O resultado. Transferência direta da força para a pressão e finalização no Jiu-Jitsu.</p>
             </div>
         </section>
+
+        <section class="tratado-section">
+            <h2>Fique por dentro do Tratado</h2>
+            <p>Receba lições sobre performance técnica e a filosofia por trás do método.</p>
+            </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Fighter Engine - Todos os direitos reservados.</p>
+        <p>Desenvolvido para homens que buscam a excelência no combate e na vida.</p>
+    </footer>
 
 </body>
 </html>
