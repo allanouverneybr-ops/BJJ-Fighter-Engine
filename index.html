@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fighter Engine - Protocolo Kettlebell</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-petroleo: #0B242B; 
             --card-bg: #0F2E37;
             --accent-color: #D4AF37; 
-            --cta-color: #28a745; /* Verde de conversão */
+            --cta-color: #28a745; 
             --text-light: #F4F4F4;
-            --border-glow: rgba(212, 175, 55, 0.2);
+            --font-titles: 'Cinzel', serif;
+            --font-body: 'Lora', serif;
+            --font-utility: 'Inter', sans-serif;
         }
 
-       html, body {
+        html, body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-petroleo); /* Garante o fundo em toda a página */
+            background-color: var(--bg-petroleo);
             color: var(--text-light);
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-utility);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-      /* Ajuste do Header para ficar igual à foto */
+        /* --- HEADER (Padronizado com Fontes Clássicas) --- */
         header {
             padding: 60px 20px 20px;
             text-align: center;
@@ -31,11 +37,12 @@
         }
 
         .motto {
-            font-family: 'Times New Roman', serif; /* Estilo clássico da imagem */
-            font-size: 1.2rem;
+            font-family: var(--font-titles);
+            font-size: 1.1rem;
             color: var(--accent-color);
             margin-bottom: 5px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .divider {
@@ -46,25 +53,26 @@
         }
 
         .header-title {
+            font-family: var(--font-titles);
             font-size: 3.2rem;
             font-weight: 900;
             line-height: 0.9;
             letter-spacing: -1px;
             text-transform: uppercase;
             margin: 0;
-            color: var(--accent-color); /* Cor dourada da imagem */
+            color: var(--accent-color);
         }
 
         .header-subtitle {
+            font-family: var(--font-body);
             font-style: italic;
-            font-family: 'Georgia', serif;
             font-size: 1.1rem;
             color: var(--text-light);
             margin-top: 15px;
             opacity: 0.9;
+            line-height: 1.4;
         }
 
-        /* Botão com o gradiente da imagem */
         .btn-header {
             display: inline-block;
             margin-top: 30px;
@@ -76,8 +84,11 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 0.9rem;
+            font-family: var(--font-utility);
+            transition: 0.3s;
         }
-        /* 2. VSL */
+
+        /* --- VSL & CTA --- */
         .vsl-container {
             max-width: 850px;
             margin: 40px auto;
@@ -90,9 +101,9 @@
             background: #000;
             border-radius: 4px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        /* 3. CTA Principal */
         .cta-wrapper {
             text-align: center;
             padding: 20px;
@@ -104,35 +115,61 @@
             color: white;
             padding: 20px 45px;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 900;
             text-decoration: none;
             border-radius: 5px;
             text-transform: uppercase;
             box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
             display: inline-block;
             transition: transform 0.2s;
+            font-family: var(--font-utility);
         }
 
-        .btn-cta:hover {
-            transform: scale(1.05);
+        .btn-cta:hover { transform: scale(1.05); }
+
+        /* --- SEÇÕES DE CONTEÚDO --- */
+        .section-title {
+            font-family: var(--font-titles);
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.2;
         }
 
-        /* 4. Mockup do E-book */
+        .content-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: #ddd;
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+            font-style: italic;
+            margin: 40px 0;
+            color: var(--accent-color);
+            background: rgba(212, 175, 55, 0.05);
+            padding: 20px;
+        }
+
+        /* --- GRID DE PREVIEWS & CARDS --- */
         .ebook-section {
-            background-color: rgba(0,0,0,0.15);
-            padding: 60px 20px;
+            background-color: rgba(0,0,0,0.3);
+            padding: 80px 20px;
             text-align: center;
         }
 
-       .ebook-mockup {
-            max-width: 650px; /* Aumentamos para quase o dobro do tamanho */
-            width: 100%;
-            margin: 30px auto;
-            display: block;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.7));
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        /* 5. Caixas Flutuantes (Pilares) */
         .features-grid {
             display: flex;
             flex-wrap: wrap;
@@ -154,33 +191,19 @@
         }
 
         .feature-card h3 {
+            font-family: var(--font-titles);
             color: var(--accent-color);
             text-transform: uppercase;
             margin-top: 0;
         }
 
-        /* 6. Seção: Fique por dentro do Protocolo */
-        .Protocolo-section {
-            max-width: 700px;
-            margin: 60px auto;
-            padding: 40px 20px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .Protocolo-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        /* 7. Rodapé */
         footer {
             padding: 40px 20px;
             text-align: center;
             font-size: 0.9rem;
             color: rgba(255,255,255,0.4);
             border-top: 1px solid rgba(255,255,255,0.05);
+            font-family: var(--font-utility);
         }
 
         @media (max-width: 600px) {
@@ -196,149 +219,86 @@
         <div class="divider"></div>
         <h1 class="header-title">JIU-JITSU<br>FIGHTER<br>ENGINE</h1>
         <div class="header-subtitle">
-          O protocolo de Kettlebell definitivo<br>
-          para um alto condicionamento do lutador<br> 
-          Master de Jiu-Jitsu.
+            O protocolo de Kettlebell definitivo<br>
+            para um alto condicionamento do lutador<br> 
+            Master de Jiu-Jitsu.
         </div>
-        
-        <a href="#" class="btn-header">SAIBA MAIS</a>
+        <a href="#vsl" class="btn-header">SAIBA MAIS</a>
     </header>
 
     <main>
-        <section class="vsl-container">
-            <div class="video-placeholder">
-                </div>
+        <section id="vsl" class="vsl-container">
+            <div class="video-placeholder"></div>
         </section>
 
         <div class="cta-wrapper">
-            <a href="#" class="btn-cta">QUERO ATIVAR MEU FIGHTER ENGINE</a>
+            <a href="LINK_HOTMART" class="btn-cta">QUERO ATIVAR MEU FIGHTER ENGINE</a>
         </div>
-<section class="container" style="padding: 80px 20px; text-align: center;">
-    <h2 style="font-family: 'Cinzel', serif; color: var(--accent-color); margin-bottom: 30px;">
-        O JIU-JITSU NÃO PERDOA O TEMPO.<br>O SEU CORPO TAMBÉM NÃO.
-    </h2>
-    
-    <div style="max-width: 800px; margin: 0 auto; text-align: left; font-family: 'Lora', serif; font-size: 1.15rem; color: #ddd;">
-        <p style="margin-bottom: 20px;">
-            Você já sentiu isso: a mente sabe exatamente o que fazer, o <em>timing</em> da raspagem está perfeito, mas o corpo hesita. A recuperação que antes levava horas, agora leva dias. O "garoto de 20 anos" da academia parece que vai te atropelar porque você já não consegue acompanhar apenas com a técnica.
-        </p>
-        
-        <p style="margin-bottom: 20px;">
-            Como você bem sabe, <strong>após os 35 anos, a biologia não é mais sua aliada.</strong> A perda de massa magra acelera, a densidade óssea diminui e as articulações — o seu "chassi" — começam a apresentar as fissuras de anos de combate. 
-        </p>
 
-        <blockquote style="border-left: 3px solid var(--accent-color); padding-left: 20px; font-style: italic; margin: 40px 0; color: var(--accent-color);">
-            "A Ordem precede a Força. Se o seu chassi está fraco, o seu Motor (força descontrolada) destrói o corpo."
-        </blockquote>
-
-        <p style="margin-bottom: 20px;">
-            O <strong>Fighter Engine</strong> não é um programa de musculação estética. É um <strong>conjunto integrado de exercícios com Kettlebell</strong> alinhado à biomecânica, desenvolvido para o lutador que tem família, trabalho e não pode se dar ao luxo de viver lesionado. 
-        </p>
-
-        <ul style="list-style: none; padding: 0; margin-top: 30px;">
-            <li style="margin-bottom: 15px;">✅ <strong>Blindagem Articular:</strong> Proteja ombros, joelhos e coluna da pressão do jogo de guarda e passagem por meio de exercícios específicos.</li>
-            <li style="margin-bottom: 15px;">✅ <strong>Pontência nos Movimentos:</strong> Aumente a capacidade de gerar explosão sem fadigar rapidamente.</li>
-            <li style="margin-bottom: 15px;">✅ <strong>Estabilidade Dinâmica:</strong> Mantenha a pressão, mesmo diante do vigor do adversário.</li>
-        </ul>
-    </div>
-</section>
-
-        <div style="text-align: center; margin: 30px 0 80px;">
-            <a href="LINK_HOTMART" class="btn-cta">GARANTIR MEU ACESSO</a>
-            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 15px; font-family: 'Inter', sans-serif;">
-                Acesso imediato ao manual em formato digital.
-            </p>
-        </div>
-<section style="padding: 80px 20px; max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+        <section class="container" style="padding: 80px 20px;">
+            <h2 class="section-title">
+                O JIU-JITSU NÃO PERDOA O TEMPO.<br>O SEU CORPO TAMBÉM NÃO.
+            </h2>
             
-            <div style="flex: 1 1 400px; text-align: center;">
-                <img src="kettlebell-image.jpg" alt="Kettlebell" style="width: 100%; max-width: 400px; border: 1px solid var(--accent-color); filter: drop-shadow(0 0 20px rgba(212,175,55,0.1)); border-radius: 4px;">
-                <p style="font-size: 1.5rem; color: var(--accent-color); margin-top: 10px; font-family: 'Cinzel'; letter-spacing: 1px;">O Kettlebel - a sua melhor ferramenta</p>
-            </div>
+            <div class="content-text">
+                <p>Você já sentiu isso: a mente sabe exatamente o que fazer, o <em>timing</em> da raspagem está perfeito, mas o corpo hesita. A recuperação que antes levava horas, agora leva dias.</p>
+                <p><strong>Após os 35 anos, a biologia não é mais sua aliada.</strong> O seu "chassi" começa a apresentar as fissuras de anos de combate.</p>
 
-            <div style="flex: 1 1 400px; font-family: 'Lora', serif;">
-                <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--accent-color); line-height: 1.1; margin-bottom: 20px; font-size: 2.2rem;">
-                    UMA ACADEMIA INTEIRA NA SUA CASA.
-                </h2>
-                <p style="color: #ddd; margin-bottom: 15px;">
-                    Para o atleta master, o recurso mais escasso é o <strong>tempo</strong>. O <em>Fighter Engine</em> não utiliza o Kettlebell por moda, mas por eficiência, SIMPLICIDADE e praticidade.
-                </p>
-                <p style="color: #ddd; margin-bottom: 20px;">
-                    Uma única peça de ferro permite gerar potência explosiva e estabilidade que a maior parte dos aparelhos de musculação não consegue replicar. 
-                </p>
-                <ul style="list-style: none; padding: 0; color: var(--accent-color); font-weight: bold;">
-                    <li style="margin-bottom: 10px;">⚡ Treine na garagem ou na sala de casa.</li>
-                    <li style="margin-bottom: 10px;">⚡ Sessões de 25 minutos com alta densidade.</li>
-                    <li style="margin-bottom: 10px;">⚡ Fim dos deslocamentos cansativos.</li>
+                <blockquote>
+                    "A Ordem precede a Força. Se o seu chassi está fraco, o seu Motor destrói o corpo."
+                </blockquote>
+
+                <ul style="list-style: none; padding: 0; margin-top: 30px; color: var(--text-light);">
+                    <li style="margin-bottom: 15px;">✅ <strong>Blindagem Articular:</strong> Proteja ombros, joelhos e coluna.</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Potência nos Movimentos:</strong> Gere explosão sem fadigar.</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Estabilidade Dinâmica:</strong> Mantenha a pressão inamovível.</li>
                 </ul>
             </div>
         </section>
-        
-<section class="ebook-section" style="background-color: rgba(0,0,0,0.3); padding: 80px 20px;">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--accent-color); margin-bottom: 10px;">POR DENTRO DO PROTOCOLO</h2>
-            <p style="font-family: 'Lora', serif; color: #bbb; max-width: 700px; margin: 0 auto 40px; font-style: italic;">
-                Uma obra técnica desenhada para a máxima absorção de conteúdo. Sem distrações, focado no que importa.
-            </p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
-                
-                <div style="text-align: center;">
-                    <img src="preview-chassi.png" alt="Página do Chassi" style="width: 100%; border: 1px solid rgba(212,175,55,0.3); border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transition: 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <p style="margin-top: 15px; font-family: 'Cinzel'; color: var(--accent-color); font-size: 0.9rem;">Bloco Base de aço</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <img src="preview-motor.png" alt="Página do Motor" style="width: 100%; border: 1px solid rgba(212,175,55,0.3); border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transition: 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <p style="margin-top: 15px; font-family: 'Cinzel'; color: var(--accent-color); font-size: 0.9rem;">Bloco o Motor</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <img src="preview-tracao.png" alt="Página da Tração" style="width: 100%; border: 1px solid rgba(212,175,55,0.3); border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); transition: 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                    <p style="margin-top: 15px; font-family: 'Cinzel'; color: var(--accent-color); font-size: 0.9rem;">Bloco Blindagem e fluidez</p>
-                </div>
-
+        <section style="padding: 80px 20px; max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+            <div style="flex: 1 1 400px; text-align: center;">
+                <img src="kettlebell-image.jpg" alt="Kettlebell" style="width: 100%; max-width: 400px; border: 1px solid var(--accent-color); border-radius: 4px;">
+                <p style="font-size: 1.5rem; color: var(--accent-color); margin-top: 10px; font-family: var(--font-titles);">O Kettlebell: Sua Ferramenta Central</p>
             </div>
-
-            <div style="margin-top: 60px;">
-                <img src="mockup-ebook.png" alt="Mockup Ebook Completo" style="max-width: 850px; width: 100%; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));">
+            <div style="flex: 1 1 400px;">
+                <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--accent-color); font-size: 2.2rem; line-height: 1.1;">UMA ACADEMIA INTEIRA NA SUA CASA.</h2>
+                <p style="font-family: var(--font-body); color: #ddd;">O recurso mais escasso é o <strong>tempo</strong>. Treine na garagem ou na sala com sessões de 25 minutos de alta densidade.</p>
             </div>
         </section>
-        
-<div style="text-align: center; margin-top: 100px; padding: 0 20px;">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--accent-color); font-size: 2.5rem; letter-spacing: 2px; margin-bottom: 10px;">
-                A ARQUITETURA DO SISTEMA
-            </h2>
-            <div style="width: 100px; height: 1px; background-color: var(--accent-color); margin: 0 auto 20px;"></div>
-            <p style="font-family: 'Lora', serif; color: #bbb; max-width: 700px; margin: 0 auto; font-style: italic; font-size: 1.1rem;">
-                O Fighter Engine foi construído sobre três pilares indissociáveis.
-            </p>
-        </div>
+
+        <section class="ebook-section">
+            <h2 class="section-title">POR DENTRO DO PROTOCOLO</h2>
+            <div class="preview-grid">
+                <div style="text-align: center;">
+                    <img src="preview-chassi.png" alt="Chassi" style="width: 100%; border: 1px solid rgba(212,175,55,0.3);">
+                    <p style="margin-top: 15px; font-family: var(--font-titles); color: var(--accent-color);">Bloco Base de Aço</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="preview-motor.png" alt="Motor" style="width: 100%; border: 1px solid rgba(212,175,55,0.3);">
+                    <p style="margin-top: 15px; font-family: var(--font-titles); color: var(--accent-color);">Bloco O Motor</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="preview-tracao.png" alt="Tração" style="width: 100%; border: 1px solid rgba(212,175,55,0.3);">
+                    <p style="margin-top: 15px; font-family: var(--font-titles); color: var(--accent-color);">Bloco Blindagem e Fluidez</p>
+                </div>
+            </div>
+            <img src="mockup-ebook.png" alt="Mockup" style="max-width: 850px; width: 100%; margin-top: 60px; filter: drop-shadow(0 15px 30px #000);">
+        </section>
+
         <section class="features-grid">
-            <div class="feature-card">
-                <h3>Estabilidade e Força</h3>
-                <p>O alicerce. Blindagem articular e estabilidade postural no tatame como premissa fundamental.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Motor</h3>
-                <p>A conversão da força em potência e condicionamento. Foco na explosão e no cárdio.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Blindagem e fluidez</h3>
-                <p>É o refinamento do corpo, deixando-o pronto para o combate.</p>
-            </div>
+            <div class="feature-card"><h3>Estabilidade</h3><p>O alicerce postural no tatame.</p></div>
+            <div class="feature-card"><h3>Motor</h3><p>A conversão da força em potência e explosão.</p></div>
+            <div class="feature-card"><h3>Fluidez</h3><p>O refinamento para o combate real.</p></div>
         </section>
-<div style="text-align: center; margin: 50px 0 80px;">
-    <a href="LINK_HOTMART" class="btn-cta">GARANTIR MEU ACESSO AO Protocolo</a>
-    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 15px; font-family: 'Inter', sans-serif;">
-        Acesso imediato ao manual em formato digital.
-    </p>
-</div>
-        
+
+        <div class="cta-wrapper">
+            <a href="LINK_HOTMART" class="btn-cta">GARANTIR MEU ACESSO</a>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Fighter Engine - Virtus et Fortitudo.</p>
-        <p>Todos os direitos reservados.</p>
+        <p>&copy; 2026 Fighter Engine - Virtus et Fortitudo. Todos os direitos reservados.</p>
     </footer>
 
 </body>
