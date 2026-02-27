@@ -217,9 +217,12 @@
 </div>
         </section>
 
-        <div class="cta-wrapper">
-            <a href="#" class="btn-cta">QUERO ATIVAR MEU FIGHTER ENGINE</a>
-        </div>
+       <div class="cta-wrapper">
+    <a href="https://pay.hotmart.com/N104680400S" class="btn-cta">ACESSAR O PROTOCOLO</a>
+    <p style="font-size: 0.8rem; color: #666; margin-top: 10px; font-family: sans-serif;">
+        Pagamento processado em ambiente seguro pela Hotmart
+    </p>
+</div>
 <section class="container" style="padding: 80px 20px; text-align: center;">
     <h2 style="font-family: 'Cinzel', serif; color: var(--accent-color); margin-bottom: 30px;">
         O JIU-JITSU NÃO PERDOA O TEMPO.<br>O SEU CORPO TAMBÉM NÃO.
@@ -250,12 +253,12 @@
     </div>
 </section>
 
-        <div style="text-align: center; margin: 30px 0 80px;">
-            <a href="LINK_HOTMART" class="btn-cta">GARANTIR MEU ACESSO</a>
-            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 15px; font-family: 'Inter', sans-serif;">
-                Acesso imediato ao manual em formato digital.
-            </p>
-        </div>
+         <div class="cta-wrapper">
+    <a href="https://pay.hotmart.com/N104680400S" class="btn-cta">ACESSAR O PROTOCOLO</a>
+    <p style="font-size: 0.8rem; color: #666; margin-top: 10px; font-family: sans-serif;">
+        Pagamento processado em ambiente seguro pela Hotmart
+    </p>
+</div>
 <section class="container" style="padding: 80px 20px; text-align: center;">
     
     <h2 style="font-family: 'Cinzel', serif; color: var(--accent-color); margin-bottom: 30px;">
@@ -372,10 +375,10 @@
 </div>
     
 </section>        
-<div style="text-align: center; margin: 50px 0 80px;">
-    <a href="LINK_HOTMART" class="btn-cta">GARANTIR MEU ACESSO AO Protocolo</a>
-    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 15px; font-family: 'Inter', sans-serif;">
-        Acesso imediato ao manual em formato digital.
+ <div class="cta-wrapper">
+    <a href="https://pay.hotmart.com/N104680400S" class="btn-cta">ACESSAR O PROTOCOLO</a>
+    <p style="font-size: 0.8rem; color: #666; margin-top: 10px; font-family: sans-serif;">
+        Pagamento processado em ambiente seguro pela Hotmart
     </p>
 </div>
 
@@ -475,5 +478,6 @@
 
 </body>
 </html>
+
 
 
